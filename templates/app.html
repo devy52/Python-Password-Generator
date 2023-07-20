@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Generator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="div1">
+    <h1>Password Generator</h1>
+    <form method="POST">
+        <label for="length">Enter the minimum length:</label>
+        <input type="number" id="length" name="length" required><br>
+        <label for="numbers"> <input type="checkbox" id="numbers" name="numbers" checked>Include numbers</label>
+        <br>
+        <label for="special"><input type="checkbox" id="special" name="special" checked>Include special characters</label>
+        <br>
+        <input type="submit" value="Generate Password">
+    </form>
+    <div>
+        {% if password %}
+        <h2>Generated Password:</h2>
+        <p>{{ password }}</p>
+    {% endif %}
+    </div>
+    </div>
+</body>
+</html>
